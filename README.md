@@ -1,2 +1,2 @@
 # Lagguge-robot-project
-It contains the source code of controlling robot arms, robot AGV, and cameras
+It contains the source codes of controlling robot arms, robot AGV, and cameras
