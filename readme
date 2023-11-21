@@ -1,0 +1,27 @@
+
+1.需要的rgb图像话题
+/kinect2/hd/image_color_rect
+2.需要的深度图话题
+/kinect2/hd/image_depth_rect
+3.创建可以传输图像使用opencv的ros节点
+catkin_create_pkg my_viewer cv_bridge roscpp rospy sensor_msgs std_msgs image_transport
+4.source
+source devel/setup.bash
+5.开启kinect驱动
+rosrun kinect2_bridge kinect2_bridge _depth_method:=cpu _reg_method:=cpu
+6.开启kcf跟踪
+rosrun track_pkg kcf_node
+7.底盘驱动
+roslaunch mecanum_car basekey.launch
+8.开启状态机
+rosrun beginner_tutorials control_center.py
+rosrun beginner_tutorials state.py
+9.开启手势识别
+进入ros_py
+开终端
+conda activate py37_pytorch
+source devel/setup.bash --extend
+cd src/classfy/script
+python classify.py
+
+
